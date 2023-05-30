@@ -1,7 +1,8 @@
 # Don't change the line below!
 #! oxygen_storefront_id: 1638714
 
-name: Storefront 1638714
+name: shopcluz
+1638714
 on: [push]
 
 permissions:
@@ -22,9 +23,6 @@ jobs:
           node-version: '16'
           check-latest: true
 
-      - name: Get yarn cache directory
-        id: yarn-cache-dir-path
-        run: echo "dir=$(yarn cache dir)" >> $GITHUB_OUTPUT
 
       - uses: actions/cache@v3
         with:
@@ -37,13 +35,10 @@ jobs:
         id: 'install-dependencies'
         run: yarn
 
-      - name: Build and Publish to Oxygen
-        id: deploy
+      - name: shopcluZ 
         uses: shopify/oxygenctl-action@v4
-        with:
-          oxygen_deployment_token: ${{ secrets.OXYGEN_DEPLOYMENT_TOKEN_1638714 }}
-          build_command: "HYDROGEN_ASSET_BASE_URL=$OXYGEN_ASSET_BASE_URL yarn build"
-
+        with: shopcluZ 
+        
       # Create GitHub Deployment
       - name: Create GitHub Deployment
         uses: shopify/github-deployment-action@v1
